@@ -17,7 +17,7 @@ Employee attendance system frontend implementing UI for CRUD Karyawan, CRUD Depa
 
 ## Repository Layout
 
-- Routes: [routes/web.php](fleetify-frontend/routes/web.php:1)
+- Routes: [routes/web.php](/routes/web.php:)
 - Controllers:
   - [App\Http\Controllers\AttendanceController](fleetify-frontend/app/Http/Controllers/AttendanceController.php:1)
   - [App\Http\Controllers\EmployeeController](fleetify-frontend/app/Http/Controllers/EmployeeController.php:1)
