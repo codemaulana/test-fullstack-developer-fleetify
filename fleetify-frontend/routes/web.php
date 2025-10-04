@@ -32,3 +32,8 @@ Route::get('/attendance-log', [AttendanceController::class, 'index'])->name('att
 // Dashboard + Aksi Absen
 Route::get('/dashboard', [AttendanceController::class, 'dashboard'])->name('attendance.dashboard');
 Route::post('/attendance/action', [AttendanceController::class, 'storeAction'])->name('attendance.action');
+
+# Fallback route to render custom 404 page for unmatched URLs
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
