@@ -1,4 +1,4 @@
-# Fleetify Absensi — Fullstack Challenge
+# Fleetify Absensi — Fullstack Test
 
 Single documentation covering both backend (Golang + Gin + MySQL) and frontend (Laravel). Located at repository root, alongside fleetify-backend and fleetify-frontend.
 
