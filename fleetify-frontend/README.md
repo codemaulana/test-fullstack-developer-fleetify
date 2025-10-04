@@ -131,14 +131,14 @@ Controllers call backend endpoints:
 ## Development Notes
 
 - Do not commit `.env`; use [/.env.example](/fleetify-frontend/.env.example)
-- Git ignores runtime/cache and local DB files; see [.gitignore](fleetify-frontend/.gitignore)
+- Git ignores runtime/cache and local DB files; see [.gitignore](/fleetify-frontend/.gitignore)
 - Assets are loaded from CDN (Bootstrap, Icons); Vite is not required for this challenge setup.
 
 ## Backend Database Setup (Required)
 
 To ensure the frontend can display meaningful data from the backend, prepare the MySQL database using the provided SQL dump.
 
-- SQL dump location: [fleetify_test.sql](/../../fleetify_test.sql) (repository root)
+- SQL dump location: [fleetify_test.sql](/test-fullstack-developer-fleetify/blob/master/fleetify_test.sql) (repository root)
 - The dump includes:
   - Schema, indexes, and foreign keys for departement, employee, attendance, attendance_history
   - Seed/sample data for immediate testing
@@ -157,7 +157,7 @@ Import options:
 
 - Via phpMyAdmin:
   - Open database "fleetify_test"
-  - Import → select [fleetify_test.sql](/../../fleetify_test.sql) → Start
+  - Import → select [fleetify_test.sql](/test-fullstack-developer-fleetify/blob/master/fleetify_test.sql) → Start
 
 Ensure that BACKEND_BASE_URL in your [.env](/fleetify-frontend/.env.example) points to the running backend instance that connects to this database.
 
