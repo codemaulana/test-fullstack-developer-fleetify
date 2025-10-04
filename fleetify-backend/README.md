@@ -21,21 +21,21 @@ Employee attendance system backend implementing CRUD for employees and departeme
 
 ## Repository Layout
 
-- Program entry: [main.go](fleetify-backend/main.go:25)
-- HTTP routes: [httpapi.SetupRoutes()](fleetify-backend/internal/interfaces/http/router.go:5)
+- Program entry: [main.go](/fleetify-backend/main.go)
+- HTTP routes: [httpapi.SetupRoutes()](/fleetify-backend/internal/interfaces/http/router.go)
 - Handlers:
-  - [httpapi.EmployeeHandler](fleetify-backend/internal/interfaces/http/employee_handler.go:1)
-  - [httpapi.DepartementHandler](fleetify-backend/internal/interfaces/http/departement_handler.go:1)
-  - [httpapi.AttendanceHandler](fleetify-backend/internal/interfaces/http/attendance_handler.go:1)
+  - [httpapi.EmployeeHandler](/fleetify-backend/internal/interfaces/http/employee_handler.go)
+  - [httpapi.DepartementHandler](/fleetify-backend/internal/interfaces/http/departement_handler.go)
+  - [httpapi.AttendanceHandler](/fleetify-backend/internal/interfaces/http/attendance_handler.go)
 - Services:
-  - [service.EmployeeService](fleetify-backend/internal/app/service/employee_service.go:1)
-  - [service.DepartementService](fleetify-backend/internal/app/service/departement_service.go:1)
-  - [service.AttendanceService](fleetify-backend/internal/app/service/attendance_service.go:1)
+  - [service.EmployeeService](/fleetify-backend/internal/app/service/employee_service.go)
+  - [service.DepartementService](/fleetify-backend/internal/app/service/departement_service.go)
+  - [service.AttendanceService](/fleetify-backend/internal/app/service/attendance_service.go)
 - MySQL repositories:
-  - [mysql.EmployeeMySQLRepository](fleetify-backend/internal/infrastructure/repository/mysql/employee_repo.go:1)
-  - [mysql.DepartementMySQLRepository](fleetify-backend/internal/infrastructure/repository/mysql/departement_repo.go:1)
-  - [mysql.AttendanceMySQLRepository](fleetify-backend/internal/infrastructure/repository/mysql/attendance_repo.go:1)
-- Domain contracts: [repository interfaces](fleetify-backend/internal/domain/repository/repositories.go:50)
+  - [mysql.EmployeeMySQLRepository](/fleetify-backend/internal/infrastructure/repository/mysql/employee_repo.go)
+  - [mysql.DepartementMySQLRepository](/fleetify-backend/internal/infrastructure/repository/mysql/departement_repo.go)
+  - [mysql.AttendanceMySQLRepository](/fleetify-backend/internal/infrastructure/repository/mysql/attendance_repo.go)
+- Domain contracts: [repository interfaces](/fleetify-backend/internal/domain/repository/repositories.go)
 
 ## Requirements
 
@@ -51,7 +51,7 @@ The app reads configuration from environment variables:
 - MYSQL_DSN: Full DSN; if empty, DSN is built from DB_* vars
 - DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME
 
-See [backend .env.example](fleetify-backend/.env.example:1).
+See [backend .env.example](/fleetify-backend/.env.example).
 
 Example DSN: `root:@tcp(127.0.0.1:3306)/fleetify_test?parseTime=true&loc=Local`
 
@@ -71,17 +71,17 @@ Windows CMD (adjust as needed):
   ```
 - phpMyAdmin:
   - Buka database "fleetify_test"
-  - Klik "Import" → pilih file [fleetify_test.sql](fleetify_test.sql:1) → Start
-- Dump berisi skema lengkap, index, foreign keys, dan data contoh untuk tabel departement, employee, attendance, attendance_history sesuai [fleetify_test.sql](fleetify_test.sql:1).
+  - Klik "Import" → pilih file [fleetify_test.sql](/fleetify_test.sql) → Start
+- Dump berisi skema lengkap, index, foreign keys, dan data contoh untuk tabel departement, employee, attendance, attendance_history sesuai [fleetify_test.sql](/fleetify_test.sql).
 2) Start server:
 
-- `go run` [main.go](fleetify-backend/main.go:25)
+- `go run` [main.go](/fleetify-backend/main.go)
 
 Server runs at `http://localhost:8080`.
 
 ## Build
 
-- `go build -o fleetify-backend.exe` [main.go](fleetify-backend/main.go:25)
+- `go build -o fleetify-backend.exe` [main.go](/fleetify-backend/main.go)
 
 ## Database Notes
 
@@ -110,7 +110,7 @@ Base URL: `http://localhost:8080/api`
 - PUT `/departements/:id` → update
 - DELETE `/departements/:id` → delete
   - Conflict (409) if employees still assigned to the departement
-  - See handler: [httpapi.DepartementHandler.Delete()](fleetify-backend/internal/interfaces/http/departement_handler.go:130)
+  - See handler: [httpapi.DepartementHandler.Delete()](/fleetify-backend/internal/interfaces/http/departement_handler.go)
 
 ### Employees
 
@@ -121,7 +121,7 @@ Base URL: `http://localhost:8080/api`
 - DELETE `/employees/:id` → delete
   - Cascade supported when query `cascade=1` or header `X-Cascade: 1`
   - Non-cascade returns 409 when attendance records exist
-  - See handler: [httpapi.EmployeeHandler.Delete()](fleetify-backend/internal/interfaces/http/employee_handler.go:148)
+  - See handler: [httpapi.EmployeeHandler.Delete()](/fleetify-backend/internal/interfaces/http/employee_handler.go)
 
 ### Attendance
 
@@ -131,7 +131,7 @@ Base URL: `http://localhost:8080/api`
 
 ### Punctuality Logic
 
-Implemented in [mysql.AttendanceMySQLRepository.QueryAttendanceLogs()](fleetify-backend/internal/infrastructure/repository/mysql/attendance_repo.go:81):
+Implemented in [mysql.AttendanceMySQLRepository.QueryAttendanceLogs()](/fleetify-backend/internal/infrastructure/repository/mysql/attendance_repo.go):
 
 Clock-in status:
 
@@ -155,10 +155,10 @@ Clock-out status:
 
 See handlers:
 
-- [httpapi.AttendanceHandler.ClockIn()](fleetify-backend/internal/interfaces/http/attendance_handler.go:25)
-- [httpapi.AttendanceHandler.ClockOut()](fleetify-backend/internal/interfaces/http/attendance_handler.go:51)
-- [httpapi.EmployeeHandler.Delete()](fleetify-backend/internal/interfaces/http/employee_handler.go:148)
-- [httpapi.DepartementHandler.Delete()](fleetify-backend/internal/interfaces/http/departement_handler.go:130)
+- [httpapi.AttendanceHandler.ClockIn()](/fleetify-backend/internal/interfaces/http/attendance_handler.go)
+- [httpapi.AttendanceHandler.ClockOut()](/fleetify-backend/internal/interfaces/http/attendance_handler.go)
+- [httpapi.EmployeeHandler.Delete()](/fleetify-backend/internal/interfaces/http/employee_handler.go)
+- [httpapi.DepartementHandler.Delete()](/fleetify-backend/internal/interfaces/http/departement_handler.go)
 
 ## Example Requests
 
@@ -204,11 +204,11 @@ X-Cascade: 1
 
 - Layered: handler → service → repository → MySQL
 - Transactional operations via `database/sql` Tx
-- Timezone: Asia/Jakarta preferred; fallback to WIB fixed zone in [service.AttendanceService](fleetify-backend/internal/app/service/attendance_service.go:41)
+- Timezone: Asia/Jakarta preferred; fallback to WIB fixed zone in [service.AttendanceService](/fleetify-backend/internal/app/service/attendance_service.go)
 
 ## Security
 
-- Never commit `.env`; use [.env.example](fleetify-backend/.env.example:1)
+- Never commit `.env`; use [.env.example](/fleetify-backend/.env.example)
 - Validate all inputs in handlers
 - Avoid leaking stack traces in error messages
 
@@ -221,8 +221,8 @@ X-Cascade: 1
 
 A GORM helper and models exist but are not used by the running backend:
 
-- [database.ConnectMySQL()](fleetify-backend/internal/infrastructure/database/mysql.go:14)
-- [models.Attendance](fleetify-backend/models/attendance.go:5)
+- [database.ConnectMySQL()](/fleetify-backend/internal/infrastructure/database/mysql.go)
+- [models.Attendance](/fleetify-backend/models/attendance.go)
 - [models.Departement](fleetify-backend/models/departement.go:5)
 
 These are legacy/experimental and can be removed or documented as optional.
