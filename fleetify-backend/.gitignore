@@ -1,0 +1,54 @@
+# Go build outputs and executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Project-specific binaries/artefacts
+/bin/
+/build/
+/dist/
+/tmp/
+/debug/
+/.coverage/
+/coverage/
+/coverage.out
+/cover.out
+/profile.out
+
+# Environment files
+.env
+.env.*
+.env.local
+.env.*.local
+
+# IDE/Editor and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/logs/
+/*.log
+
+# Go workspace (optional, should not be committed)
+go.work
+go.work.sum
+
+# Database dumps (optional; keep migrations/schema under version control)
+dump.sql
+backup*.sql
+*.sql.bak
+
+# Cache and misc
+*.cache
+*.tmp
+
+# Specifically ignore accidental committed backend binary
+/fleetify-backend.exe
