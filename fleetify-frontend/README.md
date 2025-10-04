@@ -19,16 +19,16 @@ Employee attendance system frontend implementing UI for CRUD Karyawan, CRUD Depa
 
 - Routes: [routes/web.php](/fleetify-frontend/routes/web.php)
 - Controllers:
-  - [App\Http\Controllers\AttendanceController](fleetify-frontend/app/Http/Controllers/AttendanceController.php)
-  - [App\Http\Controllers\EmployeeController](fleetify-frontend/app/Http/Controllers/EmployeeController.php)
-  - [App\Http\Controllers\DepartementController](fleetify-frontend/app/Http/Controllers/DepartementController.php)
+  - [App\Http\Controllers\AttendanceController](/fleetify-frontend/app/Http/Controllers/AttendanceController.php)
+  - [App\Http\Controllers\EmployeeController](/fleetify-frontend/app/Http/Controllers/EmployeeController.php)
+  - [App\Http\Controllers\DepartementController](/fleetify-frontend/app/Http/Controllers/DepartementController.php)
 - Views:
-  - Layout: [resources/views/layouts/app.blade.php](fleetify-frontend/resources/views/layouts/app.blade.php)
-  - Dashboard: [resources/views/attendances/dashboard.blade.php](fleetify-frontend/resources/views/attendances/dashboard.blade.php)
-  - Attendance Log: [resources/views/attendances/log.blade.php](fleetify-frontend/resources/views/attendances/log.blade.php)
-  - Employees: [index](fleetify-frontend/resources/views/employees/index.blade.php:1), [create](fleetify-frontend/resources/views/employees/create.blade.php), [edit](fleetify-frontend/resources/views/employees/edit.blade.php)
-  - Departements: [index](fleetify-frontend/resources/views/departements/index.blade.php), [create](fleetify-frontend/resources/views/departements/create.blade.php), [edit](fleetify-frontend/resources/views/departements/edit.blade.php)
-- Backend base URL config: [config/backend.php](fleetify-frontend/config/backend.php)
+  - Layout: [resources/views/layouts/app.blade.php](/fleetify-frontend/resources/views/layouts/app.blade.php)
+  - Dashboard: [resources/views/attendances/dashboard.blade.php](/fleetify-frontend/resources/views/attendances/dashboard.blade.php)
+  - Attendance Log: [resources/views/attendances/log.blade.php](/fleetify-frontend/resources/views/attendances/log.blade.php)
+  - Employees: [index](/fleetify-frontend/resources/views/employees/index.blade.php), [create](fleetify-frontend/resources/views/employees/create.blade.php), [edit](/fleetify-frontend/resources/views/employees/edit.blade.php)
+  - Departements: [index](/fleetify-frontend/resources/views/departements/index.blade.php), [create](/fleetify-frontend/resources/views/departements/create.blade.php), [edit](/fleetify-frontend/resources/views/departements/edit.blade.php)
+- Backend base URL config: [config/backend.php](/fleetify-frontend/config/backend.php)
 
 ## Requirements
 
@@ -39,8 +39,8 @@ Employee attendance system frontend implementing UI for CRUD Karyawan, CRUD Depa
 
 Set backend base URL via env and config:
 
-- Env example: [/.env.example](fleetify-frontend/.env.example)
-- Config reference: [config/backend.php](fleetify-frontend/config/backend.php)
+- Env example: [/.env.example](/fleetify-frontend/.env.example)
+- Config reference: [config/backend.php](/fleetify-frontend/config/backend.php)
 
 Example .env:
 
@@ -85,7 +85,7 @@ Ensure the backend is running and accessible at BACKEND_BASE_URL.
 - `/departements/create` create departement.
 - `/departements/{id}/edit` edit departement.
 
-See [routes/web.php](fleetify-frontend/routes/web.php).
+See [routes/web.php](/fleetify-frontend/routes/web.php).
 
 ## API Integrations
 
@@ -130,7 +130,7 @@ Controllers call backend endpoints:
 
 ## Development Notes
 
-- Do not commit `.env`; use [/.env.example](fleetify-frontend/.env.example)
+- Do not commit `.env`; use [/.env.example](/fleetify-frontend/.env.example)
 - Git ignores runtime/cache and local DB files; see [.gitignore](fleetify-frontend/.gitignore)
 - Assets are loaded from CDN (Bootstrap, Icons); Vite is not required for this challenge setup.
 
@@ -138,7 +138,7 @@ Controllers call backend endpoints:
 
 To ensure the frontend can display meaningful data from the backend, prepare the MySQL database using the provided SQL dump.
 
-- SQL dump location: [fleetify_test.sql](../../fleetify_test.sql) (repository root)
+- SQL dump location: [fleetify_test.sql](/../../fleetify_test.sql) (repository root)
 - The dump includes:
   - Schema, indexes, and foreign keys for departement, employee, attendance, attendance_history
   - Seed/sample data for immediate testing
@@ -157,13 +157,13 @@ Import options:
 
 - Via phpMyAdmin:
   - Open database "fleetify_test"
-  - Import → select [fleetify_test.sql](../../fleetify_test.sql) → Start
+  - Import → select [fleetify_test.sql](/../../fleetify_test.sql) → Start
 
-Ensure that BACKEND_BASE_URL in your [.env](fleetify-frontend/.env.example) points to the running backend instance that connects to this database.
+Ensure that BACKEND_BASE_URL in your [.env](/fleetify-frontend/.env.example) points to the running backend instance that connects to this database.
 
 ## Error Handling and 404
 
 - Custom 404 page is provided and will render for unknown routes:
-  - Fallback route: [routes/web.php](fleetify-frontend/routes/web.php)
-  - View: [resources/views/errors/404.blade.php](fleetify-frontend/resources/views/errors/404.blade.php)
+  - Fallback route: [routes/web.php](/fleetify-frontend/routes/web.php)
+  - View: [resources/views/errors/404.blade.php](/fleetify-frontend/resources/views/errors/404.blade.php)
 - Backend errors from API calls are surfaced as session alerts in the UI; forms use Laravel validation with invalid-feedback.
