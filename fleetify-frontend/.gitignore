@@ -26,7 +26,6 @@
 
 # Environment files
 .env
-.env.*
 .env.*.local
 
 # IDE and OS files
